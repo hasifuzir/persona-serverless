@@ -1,0 +1,92 @@
+org: hasifuzir
+app: persona-serverless
+service: persona-serverless # NOTE: update this with your service name
+
+custom:
+  tableName: 'persona-table-${opt:stage, self:provider.stage}'
+  stage: ${opt:stage, self:provider.stage}
+  settings:
+    dev:
+      STAGE: ${self:custom.stage}
+      NODE_ENV: 'develop'
+      PERSONA_TABLE: ${self:custom.tableName}
+    stg:
+      STAGE: ${self:custom.stage}
+      NODE_ENV: 'staging'
+      PERSONA_TABLE: ${self:custom.tableName}
+    prod:
+      STAGE: ${self:custom.stage}
+      NODE_ENV: 'production'
+      PERSONA_TABLE: ${self:custom.tableName}
+
+plugins:
+  - serverless-plugin-tracing
+  - serverless-offline
+
+provider:
+  name: aws
+  region: ap-southeast-1
+  runtime: nodejs12.x
+  stage: dev
+  environment: ${self:custom.settings.${self:custom.stage}}
+
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "xray:PutTraceSegments"
+        - "xray:PutTelemetryRecords"
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource:
+        - "*"
+        - { "Fn::GetAtt":["PersonaDynamoDBTable", "Arn"]}
+
+functions:
+  persona:
+    handler: src/index.persona
+    tracing: true
+    events:
+        - http:
+            method: get
+            path: v1/persona
+  newPersona:
+    handler: src/index.newPersona
+    tracing: true
+    events:
+        - http:
+            method: post
+            path: v1/persona/add
+  specificPersona:
+    handler: src/index.specificPersona
+    tracing: true
+    events:
+        - http:
+            method: get
+            path: v1/persona/{slug}
+  deletePersona:
+    handler: src/index.deletePersona
+    tracing: true
+    events:
+        - http:
+            method: get
+            path: v1/persona/delete/{slug}
+
+resources:
+  Resources:
+    PersonaDynamoDBTable:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: slug
+            AttributeType: S
+        KeySchema:
+          - AttributeName: slug
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: ${self:custom.tableName}

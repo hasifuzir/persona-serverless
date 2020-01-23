@@ -1,0 +1,17 @@
+{
+  "generator-astro-sls": {
+    "name": "persona-serverless",
+    "apibase": "handler",
+    "apiversion": "v1",
+    "version": "1.0.0",
+    "description": "An example application borrowing demons from Atlus' Shin Megami Tensei Persona series",
+    "author": "Hasif Uzir",
+    "src": "src",
+    "last_endpoint": "deletePersona",
+    "last_apidesc": "Deletes a specific Persona",
+    "last_method": "get",
+    "last_handlerType": "true",
+    "last_handlerrequire": "true",
+    "last_service": "dynamodb"
+  }
+}
