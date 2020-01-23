@@ -1,9 +1,8 @@
+const _ = require('lodash');
 const { OK } = require('@utils/helper');
 const logger = require('@utils/logger');
-
-const AWS = require('aws-sdk');
-
-const dynamoDb = new AWS.DynamoDB.DocumentClient();
+const { getDb } = require('@services/dynamodb');
+const { APIError } = require('@utils/APIError');
 
 const { PERSONA_TABLE } = process.env;
 
@@ -11,27 +10,14 @@ const { PERSONA_TABLE } = process.env;
  * getPersona
  * @public
  */
-
-let personaResult;
-
 exports.getPersona = async (event) => {
-  // logger.debug(event);
-  const params = {
-    TableName: PERSONA_TABLE,
-    Key: {
-      slug: event.pathParameters.slug
-    }
-  };
+  const { slug } = event.pathParameters;
 
-  dynamoDb.get(params, (error, result) => {
-    if (error) {
-      throw new Error('Oops');
-    }
+  const personaResult = await getDb(PERSONA_TABLE, slug);
 
-    if (result) {
-      personaResult = result.Item;
-    }
-  });
-
-  return OK(`${personaResult.name} found`, personaResult);
+  if (_.isEmpty(personaResult)) {
+    throw APIError.withCode('PERSONA_NOT_FOUND', 404);
+  } else {
+    return OK(`${personaResult.name} details`, personaResult);
+  }
 };

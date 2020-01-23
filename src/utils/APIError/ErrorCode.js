@@ -26,7 +26,22 @@ module.exports = {
   },
   FAILED_TO_GET: {
     errTitle: 'Failed to get from DynamoDB',
-    errDesc: 'Please try again, if problem still persist, please contact web master',
+    errDesc: 'Please try again, if problem still persists, please contact web master',
     errDebugDesc: 'Error while getting from DynamoDB'
+  },
+  PERSONA_NOT_FOUND: {
+    errTitle: 'Failed to find Persona',
+    errDesc: 'Please check slug if correct, if problem still persists, please contact web master',
+    errDebugDesc: 'Error looking for Persona'
+  },
+  PERSONA_NOT_ADD: {
+    errTitle: 'Failed to add Persona',
+    errDesc: 'Please try again, if problem still persists, please contact web master',
+    errDebugDesc: 'Error adding Persona'
+  },
+  DUPLICATE_PERSONA: {
+    errTitle: 'Duplicate Persona',
+    errDesc: 'Please check slug, if problem still persists, please contact web master',
+    errDebugDesc: 'Error adding duplicate Persona'
   }
 };

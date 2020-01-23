@@ -42,7 +42,6 @@ provider:
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
       Resource:
-        - "*"
         - { "Fn::GetAtt":["PersonaDynamoDBTable", "Arn"]}
 
 functions:

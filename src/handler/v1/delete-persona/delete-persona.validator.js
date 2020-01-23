@@ -5,6 +5,9 @@ module.exports = {
   path: '/v1/deletePersona',
   type: 'get',
   joiSchema: {
+    params: {
+      slug: Joi.string().required()
+    },
     body: {},
     response: {
       200: {

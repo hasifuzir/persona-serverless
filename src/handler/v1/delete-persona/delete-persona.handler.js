@@ -1,6 +1,8 @@
 const { OK } = require('@utils/helper');
 const logger = require('@utils/logger');
 const { deleteDb } = require('@services/dynamodb');
+const { APIError } = require('@utils/APIError');
+
 
 const { PERSONA_TABLE } = process.env;
 
@@ -13,7 +15,5 @@ exports.deletePersona = async (event) => {
 
   const personaDelete = await deleteDb(PERSONA_TABLE, slug);
 
-  if (personaDelete) {
-    return OK(`${slug} deleted`, null);
-  }
+  return OK(`Persona ${personaDelete.name} deleted`, personaDelete);
 };

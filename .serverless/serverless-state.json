@@ -29,7 +29,6 @@
             "dynamodb:DeleteItem"
           ],
           "Resource": [
-            "*",
             {
               "Fn::GetAtt": [
                 "PersonaDynamoDBTable",
@@ -284,7 +283,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/persona-serverless/dev/1579747049104-2020-01-23T02:37:29.104Z/persona-serverless.zip"
+                "S3Key": "serverless/persona-serverless/dev/1579767812054-2020-01-23T08:23:32.054Z/persona-serverless.zip"
               },
               "FunctionName": "persona-serverless-dev-persona",
               "Handler": "s_persona.handler",
@@ -313,14 +312,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "PersonaLambdaVersioneFh0U01iq3T7CRt7DNflOfnYSQAxshRB7ohJholFSA": {
+          "PersonaLambdaVersionhlLwcDmqzcwIgitWhbhmkDu8l8ZL1vn3vcjGDOA2w": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "PersonaLambdaFunction"
               },
-              "CodeSha256": "LhT2KWbofe/xi+7TGmV9KI5kIx04bi9vBGSjNbgQ1KM="
+              "CodeSha256": "xpBD3cLY9HoxUkjT2EmA3RbiBAW41eRhO6DRzB4+3Jc="
             }
           },
           "NewPersonaLambdaFunction": {
@@ -330,7 +329,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/persona-serverless/dev/1579747049104-2020-01-23T02:37:29.104Z/persona-serverless.zip"
+                "S3Key": "serverless/persona-serverless/dev/1579767812054-2020-01-23T08:23:32.054Z/persona-serverless.zip"
               },
               "FunctionName": "persona-serverless-dev-newPersona",
               "Handler": "s_newPersona.handler",
@@ -359,14 +358,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "NewPersonaLambdaVersion1xUa8fPnX2RJ2vON3e9lrAKBKbF9Kzdxv8BOBxu6Y": {
+          "NewPersonaLambdaVersionCb5nwzLx0SLDtxngpmgGdnz39sRJImbXBGgHDWDG6Y": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "NewPersonaLambdaFunction"
               },
-              "CodeSha256": "LhT2KWbofe/xi+7TGmV9KI5kIx04bi9vBGSjNbgQ1KM="
+              "CodeSha256": "xpBD3cLY9HoxUkjT2EmA3RbiBAW41eRhO6DRzB4+3Jc="
             }
           },
           "SpecificPersonaLambdaFunction": {
@@ -376,7 +375,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/persona-serverless/dev/1579747049104-2020-01-23T02:37:29.104Z/persona-serverless.zip"
+                "S3Key": "serverless/persona-serverless/dev/1579767812054-2020-01-23T08:23:32.054Z/persona-serverless.zip"
               },
               "FunctionName": "persona-serverless-dev-specificPersona",
               "Handler": "s_specificPersona.handler",
@@ -405,14 +404,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "SpecificPersonaLambdaVersionT7zt5HDrW7GlPFVbOyCL8QrfGjP7fRunK8pWc1yg": {
+          "SpecificPersonaLambdaVersioneyjbOI0cugFSS2bjdVegdiomx9OYGxvOsf9a9fQFMk": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "SpecificPersonaLambdaFunction"
               },
-              "CodeSha256": "LhT2KWbofe/xi+7TGmV9KI5kIx04bi9vBGSjNbgQ1KM="
+              "CodeSha256": "xpBD3cLY9HoxUkjT2EmA3RbiBAW41eRhO6DRzB4+3Jc="
             }
           },
           "DeletePersonaLambdaFunction": {
@@ -422,7 +421,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/persona-serverless/dev/1579747049104-2020-01-23T02:37:29.104Z/persona-serverless.zip"
+                "S3Key": "serverless/persona-serverless/dev/1579767812054-2020-01-23T08:23:32.054Z/persona-serverless.zip"
               },
               "FunctionName": "persona-serverless-dev-deletePersona",
               "Handler": "s_deletePersona.handler",
@@ -451,14 +450,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "DeletePersonaLambdaVersion1gCZ2I93GfCnt5ok4LyA7J0JGHcZ91pf7UdW5n8PI": {
+          "DeletePersonaLambdaVersion5o5Q5r1vGSg5J0qQY878J5REfxeMBekgnI0ffRupiI": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DeletePersonaLambdaFunction"
               },
-              "CodeSha256": "LhT2KWbofe/xi+7TGmV9KI5kIx04bi9vBGSjNbgQ1KM="
+              "CodeSha256": "xpBD3cLY9HoxUkjT2EmA3RbiBAW41eRhO6DRzB4+3Jc="
             }
           },
           "ApiGatewayRestApi": {
@@ -720,7 +719,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1579747023676": {
+          "ApiGatewayDeployment1579767792492": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -992,7 +991,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/persona-serverless/dev/1579747049104-2020-01-23T02:37:29.104Z/custom-resources.zip"
+                "S3Key": "serverless/persona-serverless/dev/1579767812054-2020-01-23T08:23:32.054Z/custom-resources.zip"
               },
               "FunctionName": "persona-serverless-dev-custom-resource-apigw-cw-role",
               "Handler": "apiGatewayCloudWatchRole/handler.handler",
@@ -1100,25 +1099,25 @@
           "PersonaLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "PersonaLambdaVersioneFh0U01iq3T7CRt7DNflOfnYSQAxshRB7ohJholFSA"
+              "Ref": "PersonaLambdaVersionhlLwcDmqzcwIgitWhbhmkDu8l8ZL1vn3vcjGDOA2w"
             }
           },
           "NewPersonaLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "NewPersonaLambdaVersion1xUa8fPnX2RJ2vON3e9lrAKBKbF9Kzdxv8BOBxu6Y"
+              "Ref": "NewPersonaLambdaVersionCb5nwzLx0SLDtxngpmgGdnz39sRJImbXBGgHDWDG6Y"
             }
           },
           "SpecificPersonaLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "SpecificPersonaLambdaVersionT7zt5HDrW7GlPFVbOyCL8QrfGjP7fRunK8pWc1yg"
+              "Ref": "SpecificPersonaLambdaVersioneyjbOI0cugFSS2bjdVegdiomx9OYGxvOsf9a9fQFMk"
             }
           },
           "DeletePersonaLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DeletePersonaLambdaVersion1gCZ2I93GfCnt5ok4LyA7J0JGHcZ91pf7UdW5n8PI"
+              "Ref": "DeletePersonaLambdaVersion5o5Q5r1vGSg5J0qQY878J5REfxeMBekgnI0ffRupiI"
             }
           },
           "ServiceEndpoint": {
@@ -1263,7 +1262,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "PersonaLambdaVersioneFh0U01iq3T7CRt7DNflOfnYSQAxshRB7ohJholFSA"
+        "versionLogicalId": "PersonaLambdaVersionhlLwcDmqzcwIgitWhbhmkDu8l8ZL1vn3vcjGDOA2w"
       },
       "newPersona": {
         "handler": "s_newPersona.handler",
@@ -1283,7 +1282,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "NewPersonaLambdaVersion1xUa8fPnX2RJ2vON3e9lrAKBKbF9Kzdxv8BOBxu6Y"
+        "versionLogicalId": "NewPersonaLambdaVersionCb5nwzLx0SLDtxngpmgGdnz39sRJImbXBGgHDWDG6Y"
       },
       "specificPersona": {
         "handler": "s_specificPersona.handler",
@@ -1303,7 +1302,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "SpecificPersonaLambdaVersionT7zt5HDrW7GlPFVbOyCL8QrfGjP7fRunK8pWc1yg"
+        "versionLogicalId": "SpecificPersonaLambdaVersioneyjbOI0cugFSS2bjdVegdiomx9OYGxvOsf9a9fQFMk"
       },
       "deletePersona": {
         "handler": "s_deletePersona.handler",
@@ -1323,7 +1322,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "DeletePersonaLambdaVersion1gCZ2I93GfCnt5ok4LyA7J0JGHcZ91pf7UdW5n8PI"
+        "versionLogicalId": "DeletePersonaLambdaVersion5o5Q5r1vGSg5J0qQY878J5REfxeMBekgnI0ffRupiI"
       }
     },
     "resources": {
@@ -1363,7 +1362,7 @@
     "artifact": "/home/hasif/Projects/persona-serverless/.serverless/persona-serverless.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/persona-serverless/dev/1579747049104-2020-01-23T02:37:29.104Z",
+    "artifactDirectoryName": "serverless/persona-serverless/dev/1579767812054-2020-01-23T08:23:32.054Z",
     "artifact": "persona-serverless.zip"
   }
 }
